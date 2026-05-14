@@ -18,7 +18,21 @@
 - Dev command: `npm run dev`
 - Syntax check: `npm run check`
 - Static extraction: `npm run extract:static`
+- Static extraction with explicit install path: `npm run extract:static -- "/path/to/Warhammer 40,000 Rogue Trader"`
 - Save import CLI: `node scripts/import-save.mjs "/path/to/save.zks"`
+
+## Resuming On Another Computer
+
+Clone the private playground repo, regenerate static data from that computer's local Rogue Trader install, then run the dev server:
+
+```bash
+git clone https://github.com/zDju/rogue-trader-damage-lab.git
+cd rogue-trader-damage-lab
+npm run extract:static -- "/path/to/Warhammer 40,000 Rogue Trader"
+npm run dev
+```
+
+Then import that machine's `.zks` save through the app. The generated files below are intentionally not in GitHub, so this regeneration/import step is expected.
 
 ## Local Git Notes
 

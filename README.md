@@ -33,6 +33,12 @@ Generate the bundled static blueprint index:
 npm run extract:static
 ```
 
+Generate static data from a non-default install path:
+
+```bash
+npm run extract:static -- "/path/to/Warhammer 40,000 Rogue Trader"
+```
+
 Import the latest discovered save into a readable party summary:
 
 ```bash
@@ -50,6 +56,31 @@ Run syntax checks:
 ```bash
 npm run check
 ```
+
+## Fresh Clone Setup
+
+This private repo intentionally does not include generated game data or personal save data. After cloning on another computer:
+
+```bash
+git clone https://github.com/zDju/rogue-trader-damage-lab.git
+cd rogue-trader-damage-lab
+npm run extract:static -- "/path/to/Warhammer 40,000 Rogue Trader"
+npm run dev
+```
+
+Then open:
+
+```text
+http://127.0.0.1:4173
+```
+
+Use **Import Save** in the app to import a local `.zks` save on that machine. For CLI inspection, run:
+
+```bash
+node scripts/import-save.mjs "/path/to/save.zks"
+```
+
+If `data/rogue-trader-index.json` is missing, the app still opens, but static autocomplete and weapon stat hydration will not work until `npm run extract:static` succeeds.
 
 ## Current Scope
 
