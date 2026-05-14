@@ -20,6 +20,29 @@
 - Static extraction: `npm run extract:static`
 - Save import CLI: `node scripts/import-save.mjs "/path/to/save.zks"`
 
+## Local Git Notes
+
+This environment has a read-only empty `.git` placeholder, so the local repository metadata was initialized in `.git-local` instead.
+
+Use this form for local Git commands:
+
+```bash
+git --git-dir=.git-local --work-tree=. status
+git --git-dir=.git-local --work-tree=. log --oneline
+```
+
+Current local branch:
+
+```text
+main
+```
+
+Initial commit:
+
+```text
+29b926a Initial Rogue Trader damage lab
+```
+
 Known local Rogue Trader install path:
 
 ```text
@@ -92,4 +115,3 @@ Reason:
    - Keep generated proprietary/personal JSON out of public commits.
    - Document the regenerate-data workflow for local use.
    - Decide later whether a private repo should include generated static data for personal convenience.
-
