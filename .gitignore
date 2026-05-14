@@ -1,0 +1,12 @@
+# Generated from local Rogue Trader install and personal saves.
+data/*.json
+
+# This environment has a read-only .git placeholder, so local Git metadata lives here.
+.git-local/
+
+# Local scratch/output.
+*.log
+.DS_Store
+
+# Dependencies if this later gains a build step.
+node_modules/

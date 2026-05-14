@@ -1,0 +1,12 @@
+{
+  "name": "rogue-trader-damage-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "python -m http.server 4173 --bind 127.0.0.1",
+    "extract:static": "node scripts/extract-static-data.mjs",
+    "import:save": "node scripts/import-save.mjs",
+    "check": "node --check app.js && node --check scripts/extract-static-data.mjs && node --check scripts/import-save.mjs && node --check scripts/zip.mjs"
+  }
+}
